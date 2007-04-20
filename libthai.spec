@@ -3,7 +3,7 @@
 
 Summary: Thai language support routines
 Name:    libthai
-Version: 0.1.7
+Version: 0.1.8
 Release: %mkrel 1
 License: LGPL
 Group:   System/Libraries
@@ -84,7 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %files  -n %libname
 %defattr(-, root, root)
 %doc README AUTHORS COPYING ChangeLog TODO
-%{_libdir}/lib*.so.*
+%{_libdir}/lib*.so.%{major}.*
+%{_libdir}/lib*.so.%{major}
 
 %files  -n %libname-devel
 %defattr(-, root, root)
