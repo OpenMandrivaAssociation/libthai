@@ -1,10 +1,11 @@
 %define major 0
 %define libname %mklibname thai %major
+%define libnamedev %mklibname -d thai
 
 Summary: Thai language support routines
 Name:    libthai
-Version: 0.1.8
-Release: %mkrel 2
+Version: 0.1.9
+Release: %mkrel 1
 License: LGPL
 Group:   System/Libraries
 URL:     http://linux.thai.net
@@ -39,15 +40,16 @@ Requires: thai-data
 %description -n thai-data
 Data stuff for libthai.
 
-%package -n %libname-devel
+%package -n %libnamedev
 Summary:  Thai language support routines
 Group:    Development/C
 Requires: %{libname} = %{version}
 Requires: pkgconfig
 Provides: %name-devel = %version
 Provides: thai-devel = %version
+Obsoletes: %mklibname -d thai 0
 
-%description -n %libname-devel
+%description -n %libnamedev
 The libthai-devel package includes the header files and developer docs 
 for the libthai package.
 
@@ -87,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.so.%{major}.*
 %{_libdir}/lib*.so.%{major}
 
-%files  -n %libname-devel
+%files  -n %libnamedev
 %defattr(-, root, root)
 %doc installed-docs/*
 %{_includedir}/thai
