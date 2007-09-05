@@ -5,7 +5,7 @@
 Summary: Thai language support routines
 Name:    libthai
 Version: 0.1.9
-Release: %mkrel 1
+Release: %mkrel 2
 License: LGPL
 Group:   System/Libraries
 URL:     http://linux.thai.net
@@ -45,7 +45,7 @@ Summary:  Thai language support routines
 Group:    Development/C
 Requires: %{libname} = %{version}
 Requires: pkgconfig
-Provides: %name-devel = %version
+Provides: %mklibname thai 0
 Provides: thai-devel = %version
 Obsoletes: %mklibname -d thai 0
 
