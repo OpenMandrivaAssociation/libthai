@@ -10,6 +10,7 @@ License: LGPL
 Group:   System/Libraries
 URL:     http://linux.thai.net
 Source:  ftp://linux.thai.net/pub/thailinux/software/libthai/%name-%{version}.tar.bz2
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: pkgconfig doxygen datrie-devel
 # for trietool:
 BuildRequires: trietool
