@@ -59,13 +59,13 @@ libthai.
 %setup -q -n %{name}-%{version}
 
 %build
-%configure --disable-static
+%configure2_5x --disable-static
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%makeinstall
+%makeinstall_std
 
 # move installed doc files back to build directory to package themm
 # in the right place
