@@ -4,12 +4,12 @@
 
 Summary: Thai language support routines
 Name:    libthai
-Version: 0.1.9
-Release: %mkrel 7
+Version: 0.1.12
+Release: %mkrel 1
 License: LGPL
 Group:   System/Libraries
 URL:     http://linux.thai.net
-Source:  ftp://linux.thai.net/pub/thailinux/software/libthai/%name-%{version}.tar.bz2
+Source:  ftp://linux.thai.net/pub/thailinux/software/libthai/%name-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: pkgconfig doxygen datrie-devel
 # for trietool:
