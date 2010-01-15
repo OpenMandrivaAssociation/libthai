@@ -4,7 +4,7 @@
 
 Summary: Thai language support routines
 Name:    libthai
-Version: 0.1.12
+Version: 0.1.13
 Release: %mkrel 1
 License: LGPL
 Group:   System/Libraries
