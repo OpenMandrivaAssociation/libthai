@@ -4,14 +4,15 @@
 
 Summary: Thai language support routines
 Name:    libthai
-Version: 0.1.13
-Release: %mkrel 2
+Version: 0.1.14
+Release: %mkrel 1
 License: LGPL
 Group:   System/Libraries
 URL:     http://linux.thai.net
-Source:  ftp://linux.thai.net/pub/thailinux/software/libthai/%name-%{version}.tar.gz
+Source:  http://linux.thai.net/pub/thailinux/software/libthai/%name-%{version}.tar.gz
+Patch0: libthai-0.1.9-doxygen-segfault.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildRequires: pkgconfig doxygen datrie-devel
+BuildRequires: pkgconfig datrie-devel
 # for trietool:
 BuildRequires: trietool
 
@@ -57,22 +58,16 @@ libthai.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p1
 
 %build
-%configure2_5x --disable-static
+%configure2_5x --disable-static --disable-doxygen-doc
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %makeinstall_std
-
-# move installed doc files back to build directory to package themm
-# in the right place
-rm -rf installed-docs
-mkdir installed-docs
-mv $RPM_BUILD_ROOT%{_docdir}/libthai/* installed-docs
-rmdir $RPM_BUILD_ROOT%{_docdir}/libthai
 
 rm $RPM_BUILD_ROOT%{_libdir}/*.la
 
@@ -94,14 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files  -n %libnamedev
 %defattr(-, root, root)
-%doc installed-docs/*
 %{_includedir}/thai
 %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/*
-%{_mandir}/man3/*
 
 %files  -n thai-data
 %defattr(-, root, root)
 %{_datadir}/libthai
-
-
