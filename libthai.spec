@@ -75,7 +75,6 @@ libthai.
 %files  -n %libnamedev
 %{_includedir}/thai
 %{_libdir}/lib*.so
-%{_libdir}/lib*.la
 %{_libdir}/pkgconfig/*
 
 %files  -n thai-data
