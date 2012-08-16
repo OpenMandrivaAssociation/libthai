@@ -4,8 +4,8 @@
 
 Summary: Thai language support routines
 Name:    libthai
-Version: 0.1.14
-Release: %mkrel 2
+Version: 0.1.18
+Release: 1
 License: LGPL
 Group:   System/Libraries
 URL:     http://linux.thai.net
@@ -46,7 +46,7 @@ Summary:  Thai language support routines
 Group:    Development/C
 Requires: %{libname} = %{version}
 Requires: pkgconfig
-Provides: thai-devel = %version
+Provides: thai-devel = %{version}
 Obsoletes: %{mklibname thai 0 -d}
 
 %description -n %libnamedev
@@ -65,34 +65,94 @@ libthai.
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 
-rm %{buildroot}%{_libdir}/*.la
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post   -n %libname -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libname -p /sbin/ldconfig
-%endif
-
 %files  -n %libname
-%defattr(-, root, root)
-%doc README AUTHORS COPYING ChangeLog TODO
+%doc README AUTHORS COPYING ChangeLog
 %{_libdir}/lib*.so.%{major}.*
 %{_libdir}/lib*.so.%{major}
 
 %files  -n %libnamedev
-%defattr(-, root, root)
 %{_includedir}/thai
 %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_libdir}/pkgconfig/*
 
 %files  -n thai-data
-%defattr(-, root, root)
 %{_datadir}/libthai
+
+
+%changelog
+* Mon May 02 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.14-2mdv2011.0
++ Revision: 661532
+- mass rebuild
+
+* Mon Nov 29 2010 Funda Wang <fwang@mandriva.org> 0.1.14-1mdv2011.0
++ Revision: 602822
+- new version 0.1.14 (doxygen disabled, because of wrongly listed man pages)
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - rebuild
+
+* Fri Jan 15 2010 Frederik Himpe <fhimpe@mandriva.org> 0.1.13-1mdv2010.1
++ Revision: 491923
+- update to new version 0.1.13
+
+* Sun Jun 21 2009 Frederik Himpe <fhimpe@mandriva.org> 0.1.12-1mdv2010.0
++ Revision: 387601
+- Update to new version 0.1.12
+
+* Tue Apr 07 2009 Funda Wang <fwang@mandriva.org> 0.1.9-7mdv2009.1
++ Revision: 364636
+- use configure2_5x
+
+* Sat Jun 28 2008 Oden Eriksson <oeriksson@mandriva.com> 0.1.9-7mdv2009.0
++ Revision: 229755
+- rebuild
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Tue Mar 04 2008 Oden Eriksson <oeriksson@mandriva.com> 0.1.9-5mdv2008.1
++ Revision: 179004
+- rebuild
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Wed Sep 05 2007 Anssi Hannula <anssi@mandriva.org> 0.1.9-3mdv2008.0
++ Revision: 80182
+- obsolete the old devel package instead of the providing+obsoleting
+  the current main library package in the devel package
+
+* Wed Sep 05 2007 Thierry Vignaud <tv@mandriva.org> 0.1.9-2mdv2008.0
++ Revision: 80068
+- cleanups
+- do not provides itself
+
+* Tue Aug 28 2007 Götz Waschk <waschk@mandriva.org> 0.1.9-1mdv2008.0
++ Revision: 72629
+- new version
+- new devel name
+
+* Fri Apr 20 2007 Thierry Vignaud <tv@mandriva.org> 0.1.8-2mdv2008.0
++ Revision: 16236
+- new release
+
+
+* Mon Jan 22 2007 Thierry Vignaud <tvignaud@mandriva.com> 0.1.7-1mdv2007.0
++ Revision: 111945
+- require trietool
+- fix buildrequire
+- Import libthai
+
+* Mon Jan 22 2007 Thierry Vignaud <tvignaud@mandrakesoft.com> 0.1.7-1mdv2007.1
+- initial release
+
