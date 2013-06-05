@@ -25,3 +25,4 @@ diff -up libthai-0.1.9/doc/Doxyfile.in.doxygen-segfault libthai-0.1.9/doc/Doxyfi
  CHM_FILE               = 
  HHC_LOCATION           = 
  GENERATE_CHI           = NO
+
