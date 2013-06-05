@@ -9,7 +9,7 @@ Release:	1
 License:	LGPL
 Group:		System/Libraries
 URL:		http://linux.thai.net
-Source0:	http://linux.thai.net/pub/thailinux/software/libthai/%name-%{version}.tar.gz
+Source0:	http://linux.thai.net/pub/thailinux/software/libthai/%name-%{version}.tar.xz
 Patch0:		libthai-0.1.9-doxygen-segfault.patch
 BuildRequires:	datrie-devel
 # for trietool:
