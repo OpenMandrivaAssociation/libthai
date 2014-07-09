@@ -1,2 +1,4 @@
+removed_sources:
+  libthai-0.1.19.tar.xz: 269dfb2d4795c0cdf0e7e1f49c30636ef333a84b
 sources:
-  "libthai-0.1.19.tar.xz": 269dfb2d4795c0cdf0e7e1f49c30636ef333a84b
+  libthai-0.1.20.tar.xz: 4db992a572f72c2c69748d66852c7288d8cf7ada
