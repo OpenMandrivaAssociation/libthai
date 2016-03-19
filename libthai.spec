@@ -5,7 +5,7 @@
 Summary:	Thai language support routines
 Name:		libthai
 Version:	0.1.20
-Release:	4
+Release:	5
 License:	LGPL
 Group:		System/Libraries
 Url:		http://linux.thai.net
