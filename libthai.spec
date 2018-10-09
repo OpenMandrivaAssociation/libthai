@@ -4,8 +4,8 @@
 
 Summary:	Thai language support routines
 Name:		libthai
-Version:	0.1.20
-Release:	6
+Version:	0.1.28
+Release:	1
 License:	LGPL
 Group:		System/Libraries
 Url:		http://linux.thai.net
@@ -23,7 +23,11 @@ output methods as well as basic character and string supports.
 %package -n %{libname}
 Summary:	Thai language support routines
 Group:		System/Libraries
-Requires:	thai-data
+# that not exactly true .. the lib add support for thai
+# while the -data has data/lang files meaning someone runs thai LANG *may*
+# need it. so such an thai package should pull it - crazy -
+# try dnf remove thai-data with these Requires
+#Requires:	thai-data
 
 %description -n %{libname}
 LibThai is a set of Thai language support routines aimed to ease
@@ -32,12 +36,12 @@ It includes important Thai-specific functions e.g. word breaking, input and
 output methods as well as basic character and string supports.
 
 %package -n thai-data
-Summary:	Thai language support data 
+Summary:	Thai language support data
+# hmm ?
 Group:		System/Libraries
-Requires:	thai-data
 
 %description -n thai-data
-Data stuff for libthai.
+Data files for libthai.
 
 %package -n %{devname}
 Summary:	Thai language support routines
@@ -46,7 +50,7 @@ Requires:	%{libname} = %{version}
 Provides:	thai-devel = %{version}
 
 %description -n %devname
-The libthai-devel package includes the header files and developer docs 
+The libthai-devel package includes the header files and developer docs
 for the libthai package.
 
 %prep
