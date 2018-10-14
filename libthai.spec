@@ -2,6 +2,8 @@
 %define libname %mklibname thai %{major}
 %define devname %mklibname -d thai
 
+%global _disable_rebuild_configure 1
+
 Summary:	Thai language support routines
 Name:		libthai
 Version:	0.1.28
