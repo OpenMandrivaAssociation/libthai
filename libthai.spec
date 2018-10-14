@@ -57,8 +57,7 @@ for the libthai package.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-static \
+%configure \
 	--disable-doxygen-doc
 %make
 
