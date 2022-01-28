@@ -6,8 +6,8 @@
 
 Summary:	Thai language support routines
 Name:		libthai
-Version:	0.1.28
-Release:	4
+Version:	0.1.29
+Release:	1
 License:	LGPL
 Group:		System/Libraries
 Url:		http://linux.thai.net
@@ -61,10 +61,10 @@ for the libthai package.
 %build
 %configure \
 	--disable-doxygen-doc
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libthai.so.%{major}*
