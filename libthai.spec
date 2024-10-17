@@ -10,7 +10,7 @@ Version:	0.1.29
 Release:	2
 License:	LGPL
 Group:		System/Libraries
-Url:		http://linux.thai.net
+Url:		https://linux.thai.net
 Source0:	http://linux.thai.net/pub/thailinux/software/libthai/%{name}-%{version}.tar.xz
 # for trietool:
 BuildRequires:	trietool
