@@ -13,6 +13,11 @@ Group:		System/Libraries
 Url:		https://linux.thai.net
 Source0:	http://linux.thai.net/pub/thailinux/software/libthai/%{name}-%{version}.tar.xz
 # for trietool:
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	trietool
 BuildRequires:	pkgconfig(datrie-0.2)
 
